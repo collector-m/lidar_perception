@@ -1,0 +1,64 @@
+
+# subscribe to the lidar pointcloud
+left_lidar_topic: /left/rslidar_points
+
+mid_lidar_topic: /lslidar_point_cloud
+
+right_lidar_topic: /right/rslidar_points
+
+# fusion to center lidar topic
+center_lidar_topic: /center/lidar_points
+
+# fusion to center lidar noground topic
+center_lidar_noground_topic: /center/lidar_noground_points
+
+# grid map topic
+grid_map_topic: /gridmap
+
+# heart topic
+heart_topic: /HeartBeat
+
+
+# roi zone
+roi:
+  x_min: 0.0
+  x_max: 60.0
+  y_min: -10.0
+  y_max: 10.0
+  z_min: -0.35
+  z_max: 1.0
+
+
+# map resolution  m/grid
+map_resolution: 0.25
+
+# car information
+car_info:
+  car_width: 2.02 
+  car_length: 6.045
+
+#two lidar calibration parameter
+#注：旋转角度的正负也遵循右手坐标系定则，大拇指指向轴线方向，四指方向为旋转的正方向.
+trans_params: #采用单位'米'和'角度'
+  left:  #此处的值均为left向base转的值 例：point.y + 0.985 →base.point.y
+    - 0.0        # x
+    - 1.00      # y
+    - 0.0        # z
+    - 2.0        # roll(x)
+    - 0.5        # pitch(y)
+    - 35.0       # yaw(z) 
+  right:
+    - 0.0        # x
+    - -1.00     # y
+    - 0.0        # z
+    - 4.0        # roll(x)
+    - -1.0        # pitch(y)
+    - -34.2       # yaw(z)
+  mid:
+    - 0.15        # x
+    - 0.55        # y
+    - 1.0        # z
+    - 0.0        # roll(x)
+    - -10.0        # pitch(y)
+    - -0.5        # yaw(z)
+

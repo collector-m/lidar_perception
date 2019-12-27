@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<launch>
+  <include file="$(find rslidar_pointcloud)/launch/two_lidar.launch">
+  </include>
+  
+  <!-- <include file="$(find lslidar_n301_decoder)/launch/lslidar_n301.launch">
+  </include> -->
+  <!-- Console launch prefix -->
+  <arg name="launch_prefix" default=""/>
+
+  <!-- Load parameters -->
+  <rosparam command="load" ns="lidar_perception" file="$(find lidar_perception)/cfg/lidar_perception.yaml"/>
+
+  <node pkg="lidar_perception" type="lidar_perception_node" name="lidar_perception_node" output="screen">
+  </node>
+
+</launch>
